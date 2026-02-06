@@ -1,6 +1,6 @@
 # IGS WebDriverIO Framework
 
-A comprehensive test automation framework built with WebDriverIO v9 for cross-platform testing including web browsers, mobile devices (Android/iOS), multiremote cross-browser testing, and API testing capabilities.
+A comprehensive test automation framework built with WebDriverIO v9 for cross-platform testing including web browsers, mobile devices (Android/iOS), multiremote cross-browser testing, and API testing capabilities.a
 
 ## 🚀 Features
 
