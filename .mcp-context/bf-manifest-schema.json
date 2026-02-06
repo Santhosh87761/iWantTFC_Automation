@@ -1,0 +1,164 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Mobile Test Framework Manifest",
+  "type": "object",
+  "required": [
+    "framework",
+    "version",
+    "testFunctions"
+  ],
+  "properties": {
+    "framework": {
+      "type": "string",
+      "description": "Name of the mobile testing framework"
+    },
+    "version": {
+      "type": "string",
+      "description": "Version of the framework"
+    },
+    "platform": {
+      "type": "string",
+      "enum": ["Android", "iOS", "Both"],
+      "description": "Target mobile platform(s)"
+    },
+    "automation": {
+      "type": "object",
+      "properties": {
+        "driver": {
+          "type": "string",
+          "enum": ["UiAutomator2", "XCUITest", "Espresso"],
+          "description": "Automation driver used"
+        },
+        "appiumVersion": {
+          "type": "string",
+          "description": "Appium server version"
+        }
+      }
+    },
+    "testFunctions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "path",
+          "type",
+          "description",
+          "dependencies"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier for the test function"
+          },
+          "name": {
+            "type": "string",
+            "description": "Display name of the test function"
+          },
+          "path": {
+            "type": "string",
+            "description": "File path relative to project root"
+          },
+          "type": {
+            "type": "string",
+            "enum": ["test", "page-object", "utility", "data", "config"],
+            "description": "Type of the component"
+          },
+          "testType": {
+            "type": "string",
+            "enum": ["BDD", "Unit", "Integration", "E2E"],
+            "description": "Type of test (if applicable)"
+          },
+          "description": {
+            "type": "string",
+            "description": "Brief description of functionality"
+          },
+          "features": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of features or capabilities"
+          },
+          "selectors": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "strategy": {
+                  "type": "string",
+                  "enum": ["accessibility id", "id", "resource id","xpath", "-android uiautomator"]
+                },
+                "value": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "UI selectors used (for page objects)"
+          },
+          "dependencies": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of dependencies on other components"
+          },
+          "testData": {
+            "type": "object",
+            "properties": {
+              "dataFiles": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "validationMessages": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Test data and validation information"
+          }
+        }
+      }
+    },
+    "capabilities": {
+      "type": "object",
+      "properties": {
+        "deviceName": {
+          "type": "string"
+        },
+        "platformName": {
+          "type": "string"
+        },
+        "automationName": {
+          "type": "string"
+        },
+        "app": {
+          "type": "string",
+          "description": "Path to the application under test"
+        }
+      },
+      "description": "Device and app capabilities configuration"
+    },
+    "reporting": {
+      "type": "object",
+      "properties": {
+        "allure": {
+          "type": "boolean",
+          "description": "Whether Allure reporting is enabled"
+        },
+        "screenshots": {
+          "type": "boolean",
+          "description": "Whether screenshots are captured on failures"
+        }
+      }
+    }
+  }
+}

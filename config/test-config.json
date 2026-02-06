@@ -1,0 +1,32 @@
+{
+  "applicationUrl": "https://example.com",
+  "ioLayer": "direct",
+  "cdcTrigger": "event_driven",
+  "orientation": "portrait",
+  "scenarioPrefix": "smoke_test",
+  "testData": {
+    "validUser": {
+      "username": "testuser@example.com",
+      "password": "TestPassword123!"
+    },
+    "invalidUser": {
+      "username": "invalid@example.com",
+      "password": "WrongPassword"
+    },
+    "searchTerms": [
+      "automation",
+      "testing",
+      "webdriver"
+    ]
+  },
+  "timeouts": {
+    "element": 10000,
+    "page": 15000,
+    "api": 30000
+  },
+  "environment": {
+    "browser": "chrome",
+    "device": "Android",
+    "appiumPort": 4723
+  }
+}
