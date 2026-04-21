@@ -28,6 +28,92 @@
 			"problemMatcher": [
 				"$tsc"
 			]
+		},
+		{
+			"label": "Run Only Player Controls Test",
+			"type": "shell",
+			"command": "npx",
+			"args": [
+				"wdio",
+				"run",
+				"./wdio.conf.ts",
+				"--spec",
+				"./test/specs/sanity.spec.ts"
+			],
+			"isBackground": false,
+			"group": "test"
+		},
+		{
+			"label": "Run Only Player Controls Test",
+			"type": "shell",
+			"command": "npx",
+			"args": [
+				"wdio",
+				"run",
+				"./wdio.conf.ts",
+				"--spec",
+				"./test/specs/sanity.spec.ts"
+			],
+			"isBackground": false,
+			"group": "test"
+		},
+		{
+			"label": "Run Only Player Controls Test",
+			"type": "shell",
+			"command": "npx",
+			"args": [
+				"wdio",
+				"run",
+				"./wdio.conf.ts",
+				"--spec",
+				"./test/specs/sanity.spec.ts"
+			],
+			"isBackground": false,
+			"group": "test"
+		},
+		{
+			"label": "Run Only Player Controls Test",
+			"type": "shell",
+			"command": "npx",
+			"args": [
+				"wdio",
+				"run",
+				"./wdio.conf.ts",
+				"--spec",
+				"./test/specs/sanity.spec.ts"
+			],
+			"isBackground": false,
+			"group": "test"
+		},
+		{
+			"label": "Run Only Player Controls Test",
+			"type": "shell",
+			"command": "npx",
+			"args": [
+				"wdio",
+				"run",
+				"./wdio.conf.ts",
+				"--spec",
+				"./test/specs/sanity.spec.ts"
+			],
+			"isBackground": false,
+			"group": "test"
+		},
+		{
+			"label": "Run Only Player Controls Test",
+			"type": "shell",
+			"command": "npx",
+			"args": [
+				"wdio",
+				"run",
+				"./wdio.conf.ts",
+				"--spec",
+				"./test/specs/sanity.spec.ts",
+				"--logLevel",
+				"debug"
+			],
+			"isBackground": false,
+			"group": "test"
 		}
 	]
 }

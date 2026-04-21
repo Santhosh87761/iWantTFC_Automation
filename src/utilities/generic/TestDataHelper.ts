@@ -355,6 +355,20 @@ export class TestDataHelper {
                 return data;
         }
     }
+
+    /**
+     * Generate random text string
+     * @param length - Length of the random string
+     */
+    public generateRandomText(length: number = 10): string {
+        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+        let result = '';
+        for (let i = 0; i < length; i++) {
+            result += characters.charAt(Math.floor(Math.random() * characters.length));
+        }
+        return result;
+    }
+    
 }
 
 // Export singleton instance

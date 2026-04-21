@@ -13,7 +13,7 @@ export class ConfigHelper {
      * @returns Base URL
      */
     static getBaseUrl(): string {
-        return process.env.BASE_URL || 'https://example.com';
+        return process.env.BASE_URL || 'https://iwanttfc.com/';
     }
 
     /**

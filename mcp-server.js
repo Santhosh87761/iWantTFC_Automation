@@ -34,7 +34,7 @@ app.get('/health', (req, res) => {
 // Manifest endpoint (serves bf-manifest-schema.json)
 app.get('/manifest', (req, res) => {
   const manifestPath = path.join(MCP_CONTEXT_DIR, 'bf-manifest-schema.json');
-  
+
   try {
     const manifest = fs.readFileSync(manifestPath, 'utf-8');
     res.set('Content-Type', 'application/json');
@@ -50,28 +50,28 @@ app.get('/manifest', (req, res) => {
 // Context files endpoint
 app.get('/context/:filename', (req, res) => {
   const { filename } = req.params;
-  
+
   // Security: Prevent directory traversal
   if (filename.includes('..') || filename.includes('/') || filename.includes('\\')) {
     return res.status(400).json({ error: 'Invalid filename' });
   }
-  
+
   const filePath = path.join(MCP_CONTEXT_DIR, filename);
-  
+
   try {
     // Check if file exists and is within .mcp-context/
     if (!fs.existsSync(filePath) || !filePath.startsWith(MCP_CONTEXT_DIR)) {
       return res.status(404).json({ error: 'File not found' });
     }
-    
+
     const content = fs.readFileSync(filePath, 'utf-8');
     const ext = path.extname(filename);
-    
+
     // Set appropriate content type
     let contentType = 'text/plain';
     if (ext === '.json') contentType = 'application/json';
     else if (ext === '.md') contentType = 'text/markdown';
-    
+
     res.set('Content-Type', contentType);
     res.send(content);
   } catch (error) {

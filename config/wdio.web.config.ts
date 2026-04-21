@@ -1,17 +1,26 @@
 import { config as sharedConfig } from './wdio.shared.config';
+import path from 'path';
+
+const allureOutputDir = process.env.ALLURE_RESULTS_DIR || path.join('allure-results', 'web');
+const timelineOutputDir = process.env.TIMELINE_RESULTS_DIR || path.join('timeline-reports', 'web');
+process.env.ALLURE_RESULTS_DIR = process.env.ALLURE_RESULTS_DIR || allureOutputDir;
+process.env.TIMELINE_RESULTS_DIR = process.env.TIMELINE_RESULTS_DIR || timelineOutputDir;
+process.env.ALLURE_HISTORY_DIR = process.env.ALLURE_HISTORY_DIR || path.join('allure-history', 'web');
+process.env.ALLURE_REPORT_DIR = process.env.ALLURE_REPORT_DIR || 'allure-report';
 
 export const config = {
     ...sharedConfig,
 
+    mochaOpts: {
+        ...sharedConfig.mochaOpts,
+        timeout: 300000
+    },
+
     // Test execution
     specs: [
-        require('path').join(__dirname, '../test/specs/web.simple.spec.ts')
+        path.join(__dirname, '../test/specs/**/*.spec.ts')
     ],
-    exclude: [
-        './test/specs/mobile.simple.spec.ts',
-        './test/specs/api.simple.spec.ts',
-        './test/specs/multiremote.simple.spec.ts'
-    ],
+    exclude: [],
 
     // Web-specific base URL
     baseUrl: process.env.BASE_URL || 'https://example.com',
@@ -27,7 +36,11 @@ export const config = {
                 '--disable-web-security',
                 '--disable-features=VizDisplayCompositor',
                 '--window-size=1920,1080'
-            ]
+            ],
+            prefs: {
+                "profile.default_content_setting_values.notifications": 1,
+                "profile.default_content_setting_values.clipboard": 1
+            }
         }
     }],
 
@@ -40,12 +53,12 @@ export const config = {
     reporters: [
         'spec',
         ['allure', {
-            outputDir: 'allure-results',
+            outputDir: allureOutputDir,
             disableWebdriverStepsReporting: false,
             disableWebdriverScreenshotsReporting: false
         }],
         ['timeline', {
-            outputDir: 'timeline-reports',
+            outputDir: timelineOutputDir,
             embedImages: true,
             screenshotStrategy: 'on:error'
         }]

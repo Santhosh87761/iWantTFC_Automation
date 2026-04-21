@@ -1,0 +1,12 @@
+{
+  "region": "PH",
+  "expectedResults": {
+    "continueAsGuestButtonText": "Continue as Guest",
+    "shouldBeDisplayed": true
+  },
+  "testMetadata": {
+    "scenario": "Verify that Continue as Guest is displayed on the login screen on launching the application as guest user",
+    "severity": "critical",
+    "feature": "Guest User Authentication"
+  }
+}

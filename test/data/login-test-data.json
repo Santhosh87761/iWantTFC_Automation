@@ -1,0 +1,101 @@
+{
+  "guestUserCredentials": {
+    "email": "sanitycheck@yopmail.com",
+    "password": "Test1234",
+    "expectedMessage": "POSTMAN",
+    "successMessage": "Login successful"
+  },
+  "premiumUserCredentials": {
+    "email": "abhilash584@gmail.com",
+    "password": "Test1234",
+    "subscribeOrrenewText": "A valid subscription is required to view this content. Please subscribe or renew your plan.",
+    "subscribeToWatchBtnText": "Subscribe to watch",
+    "subscribeText":"A valid GMA Pinoy subscription is required to view this content. Please subscribe or renew your plan.",
+    "subscribeBtnText":"Subscribe",
+    "freeUserSubscribeText":"A valid subscription is required to view this content. Please subscribe or renew your plan."
+  },
+  "editProfile": {
+    "firstName": "AUTO",
+    "lastName": "TEST",
+    "gender": "FEMALE",
+    "dateOfBirth": "01011990"
+  },
+  "gmaUserCredentials": {
+    "email": "nadstest01+testidmsmsHK01@gmail.com",
+    "password": "iWanttfc2"
+  },
+  "episodes": {
+    "episode1": "S1 E1",
+    "episode2": "S1 E2",
+    "homeTabText": "Home",
+    "episodeS1E1Title": "S1 E1 · Episode 1",
+    "episodeS1E2Title": "S1 E2 · Episode 2"
+  },
+  "searchContent": {
+    "contentTitleBatang": "The Alibi: Ang Buong Katotohanan",
+    "contentTitleWalang":"Walang Hanggan",
+    "showSearchToWatchList": "La Vida Lena",
+    "multipleEpisodesContent": "Ghosting",
+    "linkCopiedToastMessage": "Share link copied to clipboard",
+    "shareBtnContentEpisode": "Possessed: Real Stories from Filipino Exorcists",
+    "subscribeOrrenewText": "A valid subscription is required to view this content. Please subscribe or renew your plan.",
+    "subscribeToWatchBtnText": "Subscribe to watch",
+    "removedContinueToWatchToastMsg": "Removed from watch history",
+    "watchListAddedToastMsg": "Added to watchlist",
+    "watchListRemovedToastMsg": "Removed from watchlist",
+    "moviesAndShowsText": "Movies and Shows",
+    "topPicksNearYouText": "Top Picks Near You",
+    "autoSearchVal": "Love",
+    "popularSearchContent": "Popular Searches:",
+    "placeHoderText": "Search by title, actor, genre..."
+  },
+  "page": {
+    "privacyPolicyUrlFragment": "privacy",
+    "termsAndConditionsUrlFragment": "terms",
+    "helpCentreUrlFragment": "help"
+  },
+  "search": {
+    "message": "No results found."
+  },
+  "setPin": {
+    "pin": "1234"
+   },
+  "testScenarios": {
+    "positive": {
+      "description": "Valid login with correct credentials",
+      "email": "test@gmail.com",
+      "password": "Password123",
+      "expectedResult": "Login successful"
+    },
+    "negative": [
+      {
+        "name": "Invalid Credentials",
+        "email": "invalid@example.com",
+        "password": "InvalidPassword",
+        "expectedMessage": "Invalid username or password",
+        "severity": "critical"
+      },
+      {
+        "name": "Empty Email",
+        "email": "",
+        "password": "Password123",
+        "expectedMessage": "Email is required",
+        "severity": "high"
+      },
+      {
+        "name": "Empty Password",
+        "email": "test@gmail.com",
+        "password": "",
+        "expectedMessage": "Password is required",
+        "severity": "high"
+      },
+      {
+        "name": "Invalid Email Format",
+        "email": "invalidemail",
+        "password": "Password123",
+        "expectedMessage": "Invalid email format",
+        "severity": "medium"
+      }
+    ]
+  }
+}

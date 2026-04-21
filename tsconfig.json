@@ -4,7 +4,7 @@
     "module": "CommonJS",
     "lib": ["ES2019", "DOM"],
     "outDir": "./dist",
-    "strict": true,
+    "strict": false,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
@@ -15,7 +15,8 @@
     "resolveJsonModule": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "types": ["mocha", "node", "@wdio/globals/types"],
+    "types": ["mocha", "node", "@wdio/globals/types", "@wdio/cucumber-framework"],
+    "ignoreDeprecations": "6.0",
     "baseUrl": ".",
     "paths": {
       "@pages/*": ["src/pageObjects/*"],
@@ -28,7 +29,7 @@
     "src/**/*",
     "test/**/*",
     "config/**/*"
-  ],
+, "remotewdio.conf.ts"  ],
   "exclude": [
     "node_modules",
     "dist",

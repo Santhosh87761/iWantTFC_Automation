@@ -1,5 +1,8 @@
 import { config as sharedConfig } from './wdio.shared.config';
 
+const allureOutputDir = process.env.ALLURE_RESULTS_DIR || 'allure-results';
+const timelineOutputDir = process.env.TIMELINE_RESULTS_DIR || 'timeline-reports';
+
 export const config = {
     ...sharedConfig,
     
@@ -57,12 +60,12 @@ export const config = {
     reporters: [
         'spec',
         ['allure', {
-            outputDir: 'allure-results',
+            outputDir: allureOutputDir,
             disableWebdriverStepsReporting: false,
             disableWebdriverScreenshotsReporting: false
         }],
         ['timeline', {
-            outputDir: 'timeline-reports',
+            outputDir: timelineOutputDir,
             embedImages: true,
             screenshotStrategy: 'on:error'
         }]

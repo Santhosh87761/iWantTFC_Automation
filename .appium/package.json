@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "appium-uiautomator2-driver": "^4.2.7"
+  }
+}

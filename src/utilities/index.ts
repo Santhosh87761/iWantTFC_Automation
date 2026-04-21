@@ -17,8 +17,7 @@ export { ValidationHelper } from './generic/ValidationHelper';
 export { WaitHelper } from './generic/WaitHelper';
 
 // Business Logic Utilities
-export { ApiBusinessHelper } from './business/ApiBusinessHelper';
-export { WebBusinessHelper } from './business/WebBusinessHelper';
+// export { WebBusinessHelper } from './business/WebBusinessHelper';
 // export { MobileBusinessHelper } from './business/MobileBusinessHelper';
 
 // Test Management Integrations
