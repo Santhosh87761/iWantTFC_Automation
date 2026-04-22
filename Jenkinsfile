@@ -15,13 +15,13 @@ pipeline {
 
         stage('Install') {
             steps {
-                sh 'npm install'
+                bat 'npm install'
             }
         }
 
         stage('Test Web') {
             steps {
-                sh 'npm run test:web'
+                bat 'npm run test:web'
             }
         }
     }
