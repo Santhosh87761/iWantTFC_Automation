@@ -19,6 +19,12 @@ pipeline {
             }
         }
 
+        stage('Setup Appium Driver') {
+    steps {
+        bat 'appium driver install uiautomator2'
+    }
+}
+
         stage('Test Web') {
             steps {
                 bat 'npm run android'
