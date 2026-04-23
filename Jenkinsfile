@@ -13,6 +13,13 @@ pipeline {
             }
         }
 
+        stage('Clean') {
+    steps {
+        bat 'rmdir /s /q node_modules'
+        bat 'del package-lock.json'
+    }
+}
+
         stage('Install') {
             steps {
                 bat 'npm install'
